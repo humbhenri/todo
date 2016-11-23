@@ -1,7 +1,7 @@
 <div *ngIf="todo">
   <h2>{{todo.name}} details!</h2>
   <div>
-    <label>id: </label>{{todo.key}}</div>
+    <label>key: </label>{{todo.key}}</div>
   <div>
     <label>name: </label>
     <input [(ngModel)]="todo.name" placeholder="name" />

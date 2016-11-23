@@ -25,8 +25,8 @@ export class TodoService {
                .then(todos => todos.find(todo => todo.key === key));
   }
 
-  delete(id: number): Promise<void> {
-    const url = `${this.todosUrl}/${id}`;
+  delete(key: string): Promise<void> {
+    const url = `${this.todosUrl}/${key}`;
     return this.http.delete(url, {headers: this.headers})
       .toPromise()
       .then(() => null)

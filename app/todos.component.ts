@@ -36,7 +36,7 @@ export class TodosComponent implements OnInit {
 
   delete(todo: Todo): void {
     this.todoService
-        .delete(todo.id)
+        .delete(todo.key)
         .then(() => {
           this.todos = this.todos.filter(h => h !== todo);
           if (this.selectedTodo === todo) { this.selectedTodo = null; }
