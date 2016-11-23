@@ -1,0 +1,22 @@
+<h2>My Todos</h2>
+<div>
+  <label>Todo:</label> <input #todoName />
+  <button (click)="add(todoName.value); todoName.value=''">
+    Add
+  </button>
+</div>
+<ul class="todos">
+  <li *ngFor="let todo of todos" (click)="onSelect(todo)"
+      [class.selected]="todo === selectedTodo">
+    <span class="badge">{{todo.key}}</span>
+    <span>{{todo.name}}</span>
+    <button class="delete"
+      (click)="delete(todo); $event.stopPropagation()">x</button>
+  </li>
+</ul>
+<div *ngIf="selectedTodo">
+  <h2>
+    {{selectedTodo.name}}
+  </h2>
+  <button (click)="gotoDetail()">View Details</button>
+</div>
