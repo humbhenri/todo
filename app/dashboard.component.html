@@ -1,9 +1,11 @@
 <h3>Todos</h3>
+
+<todo-search></todo-search>
+
 <div class="grid grid-pad">
-  <a *ngFor="let todo of todos"  [routerLink]="['/detail', todo.key]"  class="col-1-4">
+  <a *ngFor="let todo of todos" [routerLink]="['/detail', todo.key]">
     <div class="module todo">
       <h4>{{todo.name}}</h4>
     </div>
   </a>
 </div>
-<todo-search></todo-search>

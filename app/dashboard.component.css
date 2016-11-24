@@ -27,7 +27,8 @@ h4 {
   width: 25%;
 }
 .module {
-  padding: 20px;
+  padding: 1px;
+  margin: 1px;
   text-align: center;
   color: #eee;
   max-height: 120px;
