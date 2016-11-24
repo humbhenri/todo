@@ -9,14 +9,17 @@ import { Todo } from './todo';
 export class TodoService {
 
   private headers = new Headers({'Content-Type': 'application/json'});
-  private todosUrl = 'localhost:5000/api/todo';  // URL to web api
+  private todosUrl = 'http://localhost:5000/api/todo';  // URL to web api
 
   constructor(private http: Http) { }
 
   getTodos(): Promise<Todo[]> {
     return this.http.get(this.todosUrl)
                .toPromise()
-               .then(response => response.json().data as Todo[])
+               .then(response => {
+                 console.log(response.json());
+                 return response.json() as Todo[];
+               })
                .catch(this.handleError);
   }
 
