@@ -40,7 +40,7 @@ export class TodoService {
     return this.http
       .post(this.todosUrl, JSON.stringify({name: name}), {headers: this.headers})
       .toPromise()
-      .then(res => res.json().data)
+      .then(res => res.json())
       .catch(this.handleError);
   }
 
